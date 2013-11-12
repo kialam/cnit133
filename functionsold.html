@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>HW 5 - JavaScript: Functions</title>
+<script type="text/javascript">
+function calcSquare(num) {
+	return num*num
+}
+
+function getNum(num) {
+	parseInt(num = prompt('Enter a number', ''));
+	if (isNaN(num)) {
+		alert("Tsk tsk, you didn't enter a number!");
+	else {
+		alert('Cool, you entered' + num);
+	}
+	};
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+// function calcSquare(num){
+	// return num * num
+// }
+
+// function getNum(num){
+	// parseInt(num = prompt('Enter a number', ''));
+	// if (isNaN(num)) {
+		// alert("Tsk tsk, you didn't enter a number!");
+	// else {
+		// alert('Cool, you entered' + num);
+	// }
+	// };
+// }
+</script>
+<input type="button" value="Run calcSquare" onclick="alert(calcSquare(3));">
+<input type="button" value="Run getnum" onclick="alert(getNum('enter a number'));">
+</body>
+</html>

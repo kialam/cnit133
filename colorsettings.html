@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>JS 5 -Color Settings</title>
+<script type="text/javascript">
+	function getColor(str){
+		var color = prompt(str);
+		if (color == "aqua" || color == "black" || color == "blue" || color == "fuchsia" || color == "gray" || color == "green" || color == "lime" || color == "maroon" || color == "navy" || color == "silver" || color == "olive" || color == "purple" || color == "red" || color == "silver" || color == "teal" || color == "white" || color == "yellow") {
+			// setColor(color);
+				document.write("You entered " + color + ".");
+
+		} else {
+			alert("You did not enter in a valid HTML color!");
+			// prompt(str);
+		}
+	}
+	function setColor(color) {
+		//
+	}
+</script>
+</head>
+<body>
+<input type="button" value="Run getColor" onclick="getColor('Enter a color');">
+</body>
+</html>

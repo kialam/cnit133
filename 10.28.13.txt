@@ -1,0 +1,217 @@
+10.28.13 Event Handling & DOM properties
+JS Event Handler & Regular Expression
+<head>
+<script>
+	function callHandler(str){
+		alert(str);
+	}
+</script>
+</head>
+<body onload="callHandler('welcome');" onunload="callHandler('cya!');">
+<h1>JS Pgm</h1>
+<p onmouseover="callHandler('Mouseover");"
+	onmouseout="callHandler('Mouseout');">Mouse Over here</p>
+<a href="javascript: void(0)" onclick="callHandler('ouch!');">Click me</a>
+<form action="#" onsubmit="callHandler('FormSubmit');"
+	onreset="callHandler('Reset');">
+<input type="text" onfocus="callHandler('focus');"
+onblur="callHandler('blur');"
+onchange="callHandler('change');">
+<input type="submit"><input type="reset">
+</form>
+</body>
+
+javascript: void(0) = JS pseudoprotocol
+onblur = move mouse away
+onchange = event has not passed until user has done something on their end
+
+Regular Expression: is a pattern that you can use to match against character
+combinations in strings
+
+ex: /Meta char/flag
+g: global
+i: ignore uppercase/lowercase
+m: multiple lines
+
+How to create RE
+1. Reg Exp literals
+var myRegExp = /num/i; // search for term "num" regardless of upper or
+lowercase
+
+2. Reg Exp constructor
+var myRegExp = new RegExp('num','i'); // alt RegExp(/num/i);
+
+Regular Expression method:
+var myRegExp = /num/i;
+var str = "some Number";
+myArray = myRegExp.exec(str); // function exec goes to myRegExp to find matching 'str'
+value, and store data into an array
+
+bool_data = myRegExp.test(str); //test function searches myRegExp with specified 'str' value
+and either returns "TRUE" or "False"
+
+String Object method:
+var myArry2 = str.match(myRegExp); // function match looks at myRegExp to do a
+match of 'str'
+var bool_data2 = str.search(myRegExp); // position search "-1" = cannot find
+the matching data
+
+if myRegExp = /num/i
+str.search(myRegExp) = 5
+
+if myRegExp = /num/
+str.search(myRegEx) = -1
+
+Both do the same thing, however different objects have different methods
+
+^ beginning of string/line
+ex:
+/^num/i
+str="Number"; /true
+str="Some Number"; /false
+
+$ end of string/line
+ex:
+/num$/i
+str="NumberNum"; /true
+str="SomeNumber"; /false
+
+() group of regular expressions inside parentheses
+[] range of data
+[a-z 0-9 A-Z]
+. single charcter
+\d numeric digit 0-9
+\w number letter underscore => [A-Z a-z 0-9_]
+a* any "a" found
+a? either no "a" or only 1 "a"
+a+ one or more time
+a{n} must have specified n number of "a"s
+a{5} must have 5 "a"s
+a{n,}
+a{5,} must have at least 5 "a"s
+a{n,m} inclusive
+a{5,7} must have between 5-7 "a"s
+
+var myRegExp =/^[a-zA-Z0-9\$]{6,}$/; /at least 6  combination of lower, uppercase, and special characters. Could be used to verify a password.
+
+ZIP CODE
+var myRegExp =/\d{5}([\-]\d{4})?/
+
+first part: at least 5 digits 0-9
+second part:(optional)- + 4 digits
+
+PHONE NUMBERS
+var myRegExp = 
+/\d{3}[\-]\d{3}[\-]\d{4}/
+
+SOCIAL SECURITY
+var myRegExp =
+/^\d{3} - \d{2} - \d{4}$/
+
+EMAIL
+var myRegExp =
+/^(\w+@)([a-z0-9]{1,}\.[a-z]{2,}$)/i; //this does not allow for dashes or
+periods in the username part of the email
+
+Form Validation
+Review:
+Inside Document Object is a form property with index values and element data
+
+<script>
+function checkFomr(){
+	var loc_text=document.getElementById('text1').value; //captures data
+	from form and stores as local variable "loc_text"
+	'' loc_num = '' ('num4').value;
+	'' loc_email= '' ('email').value;
+
+	if(isText(loc_text) == false;) {
+		alert("Error, cannot be empty");
+		document.getElementById('text1').focus();
+		return false;
+	}
+v1. function isText(str){
+	if(str.lenth>0){ // better way to test for an empty text box
+		return true;
+	} else {
+		return false;
+	}
+}
+v2. function isText(str){
+	if(str == '' || str == null){ // works most of the time
+		return false;
+	} else {
+		return true;
+	}
+}
+v1. function isNumber(str){
+var loc.num = parseInt(str);
+	if(isNaN(loc_num)){
+	return false;
+	} if(loc.num.toString().length == 4){
+	return true;
+	} else {
+	return false;
+	}
+}
+}
+v2. function isNumber(str){
+	if(str>="0000" & str<="9999"){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+alert("submit form");
+return true;
+}
+<form>
+<input type="text" id="text1"> // text box
+<input type="text" id="num4"> // at least 4 digits
+<input type="text" id="email"> // valid email address
+<input type="submit" onclick="return checkForm()"> // checkForm function will return either true or false
+</form>
+
+3 text boxes & 1 submit button
+
+REGULAR EXPRESSION version of validation
+str.length>0 return true else return false
+
+function isNumber(str){
+	var regEx4Digits = /^/d{4}$/;
+	if(regEx4Digits.test(str)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function isEmail(str){
+	var regExEmail = /^(\w+@)([a-z0-9]{1,}\.[a-z]{2,}$)/i;
+	if(regExEmail.test(str)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+Common Gateway Interface (CGI)
+Web Server executable program. Language agnostic
+
+<form action="../pgm.php" method="get"> //relative path. Absolute path
+version="http://hills.ccsf.edu/cgi-bin/phpwrap/stud01/pgm.php"
+<input type="text" id="text1">
+<input type="text" id="num4">
+<input type="text" id="email">
+<input type="submit>
+
+pgm.php
+<?php
+header("content-type:text/html");
+$a=$_GET["text1"];
+$b=$_GET["num4"];
+$c=$_GET["email"];
+echo"<p>First:$a</p>";
+echo"<p>Second:$b</p>";
+echo"<p>Third:$c</p>";
+?>

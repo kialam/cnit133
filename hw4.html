@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>HW 4 - JavaScript: Looping Statements</title>
+<script type="text/javascript">
+//var num = 0;
+// var num = [];
+
+//var i = parseInt(prompt('please enter a number between 1 and 100'));
+//if(isNaN(i)){
+//	prompt('please enter a number between 1 and 100');
+//	}elseif(a<=0){
+//	prompt('please enter a number bigger than or equal to 1);
+//	}
+</script>
+</head>
+<body>
+<h1>Pick a number between 1-100</h1>
+<script type="text/javascript">
+var num = 0;
+var counter = 1
+var countnum = 0;
+while (counter == 1)  {
+	if ((num>0) && (num<=100)) {
+	alert("Success! You entered: " +  num);
+	counter = 0;
+}
+	else {
+	num = parseInt(prompt("Enter a number between 1 and 100:", ""));
+	if ( isNaN(num) ) {
+	alert("Error! You did not enter a number! ");
+	countnum++;
+		}
+	// } while ( isNaN(num) )
+	} 
+}
+document.write("You picked " + num + '<br />');
+document.write("It took you " + countnum + " attempt(s).");
+</script>
+<h2>List of books</h2>
+<script>
+document.write('<ol>');
+for(i=0; i<=4; i++){
+	book = prompt('Please enter the title of a book');
+	document.write('<li>'+book+'</li>');
+}
+document.write('</ol>');
+</script>
+</body>
+</html>

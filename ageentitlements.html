@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>Age Entitlements - JavaScript: Looping Statements</title>
+<script type="text/javascript">
+// do {
+// 	age = parseFloat(prompt('how old are you?'));
+// 	if ( isNaN(age) ) {
+// 	alert('Tsk, tsk! You did not enter a number!'); }
+// 	} while ( isNaN(age))
+// 	document.write('Being '+ age + ' Entitles You To:');
+var age = prompt("How old are you?");
+document.write("Being ", age, "    Entitles You To: <br />");
+	if(age<=5)  { 
+		document.write("Take a nap every day. <br />");
+	} if(age<=13)  {
+		document.write("Be a child, play and have fun. <br />")
+	} if(age>=13 && age<=19)  {
+		document.write("Be a teenager. <br />")	
+	} if(age>=16)  {
+		document.write("Drive. <br />")
+	} if(age>=18)  {
+		document.write("Vote. <br />")
+	} if(age>=18)  {
+		document.write("Legally buy cigarettes. <br />")
+	} if(age>=21)  {
+		document.write("Legally drink alcohol. <br />")
+	} if(age>=25)  {
+		document.write("Get a discount on car insurance from most insurance companies. <br />")
+	} if(age>=65)  {
+		document.write("Retire. <br />")
+	} if(age>=65)  {
+		document.write("Take a nap every day. <br />")
+	} if(isNaN(age)) {
+		document.write("You did not enter in a valid number.")
+	}
+</script>
+<body>
+	<script type="text/javascript">
+	// document.write('Being '+ age + ' Entitles You To:');
+	</script>
+</body>
+</html>

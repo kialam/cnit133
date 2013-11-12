@@ -1,0 +1,88 @@
+Javascript Hackathon
+11/6-11/7 SF Moscone Center
+To reg: https://retsly.eventbrite.com
+Real Estate (MLS)<-- retsly platform <-- JS/Smartphone/web
+
+No Class next week 11/11/13 Veteran's Day
+
+Review:
+Create regular expressions:
+var RegExp_name = /num/i; OR
+var RegExp_nam = new RegExp ("num","i");
+var str = "Number";
+var a1 = RegExp_name2.exec(str);
+var bool_data = RegExp_name2.test(str);
+
+var a1 = str.match(RegExp_name); //match function searches string for
+specified pattern (/num/i) and returns the pattern if found
+
+.search //same function except it returns 'true' if there is a match
+
+/\./ use '\' to escape the '.', otherwise '.' means any character in RegEx
+\d* \d? \d+ for asterisk, question mark, and plus symbol
+\{5} // expecting exactly 5 digits
+\d{4,5} // expecting between 4-5 digits
+
+CGI = Common Gateway Interface
+(Any executable program - Perl/PHP/etc)
+JS sends the http request and in return receives the http response. Bypass
+browswer - no need for browser refresh
+
+innerHTML - change data within HTML 
+getElementByID
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8">
+<title>CGI review</title>
+</head>
+<body>
+<header><h1>CGI (PHP) review</h1></header>
+<section>
+	<form action="../../../cgireview.php" method="get">
+		Text: <input type="text" name="text1" required> <br />
+		Number: <input type="text" name="num1" required="on"><br />
+		Email: <input type="text" name="email" required> <br />
+		<input type="submit">
+	</form>
+</section>
+<footer><p style="text-align:center">&copy; Copyright 2013 CCSF CNIT 132/133 Class</p></footer>
+</body>
+</html>
+
+cgireview.php source:
+<?php
+header("Content-type: text/html");
+
+$a=$_GET["text1"];
+$b=$_GET["num1"];
+$c=$_GET["email"];
+
+echo "<p>first data is: $a.</p>";
+echo "<p>second data is: $b.</p>";
+echo "<p>third data is: $c.</p>";
+
+?>
+
+
+AJAX
+1. Create an XMLHttpRequest object (XML format to transmit data)
+2. Specify and submit the HTTP request
+3. Synchronous/Asynchronous retreive server's HTTP response
+
+Synchronous: request & wait for response
+Asynchronous: request & do not wait for response. Expects a callback to
+retreive data
+
+one -> object
+two -> methods [open(method,url,t{asyn}/f{sync}) and send()]
+three -> properties 
+		1. onreadystatechange
+		2. readystate //status of the response 4 means request is
+		    complete. "status=200" inside this readystate object means
+		    good. status=404 is not found
+		3. responseText responseXML //data type is string. if server
+		returns string data, it will store it in responseText. XML data
+		will be stored in responseXML.
+	

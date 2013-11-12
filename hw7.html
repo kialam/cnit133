@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<title>HW 7 - DHTML: Object Model and Event Model</title>
+<script type="text/javascript">
+function changeBorder(len){ // len is a local variable
+	document.getElementById('mytable').border=len;//
+}
+
+function changeSize(size){ //size is a local variable
+	document.getElementById('ccsf').width = size;
+	document.getElementById('ccsf').height = size;
+}
+</script>
+</head>
+<body>
+<h1>JS Interactive Tables</h1>
+<table border="1" id="mytable">
+<tr><td><a onclick="changeBorder(10)">Click to Enlarge</a></td>
+	<td><a onclick="changeBorder(1)">Click to Reduce</a></td></tr>
+<tr><td><a onclick="changeBorder(10)">Click to Enlarge</a></td>
+        <td><a onclick="changeBorder(1)">Click to Reduce</a></td></tr>
+</table>
+<h1>JS Interactive Image</h1>
+<img id="ccsf" src="rubiks.jpg" width="50" height="50">
+<input type="button" onclick="setTimeout('changeSize(150)', 5000)" value="Change height and width of image after 5 sec">
+
+</body>
+</html>
