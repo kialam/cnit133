@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Final #1</title>
+<script type="text/javascript">
+function askName(name) {
+	yourName = prompt('Please enter your first name:');
+	while (parseInt(yourName) || yourName == '') {
+		alert('You did not enter a first name.');
+		yourName = prompt('What is your first name?');
+	}
+
+	alert('Hello ' + yourName + '.');
+	// document.write('You entered ' + yourName + '.');
+	}
+</script>
+</head>
+<body>
+	<h1>Prompt for Name</h1>
+Click the button to start the program: <br />
+<input type="button" value = "Start" onclick="askName();">
+
+
+	<script type="text/javascript">
+	// 	document.write('You entered ' + promptName + '.');
+	// </script>
+</body>
+</html>

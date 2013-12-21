@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Final #2</title>
+<script>
+function calc(fm) {
+	var rate = document.getElementById('rate').value;
+	var price = document.getElementById('price').value;
+	var down = document.getElementById('down').value;
+	var interest = rate / 100;
+	var total = ((price - down)*(1 + interest));
+	var payment = (total / 60).toFixed(2); //Rounds value to two decimal points
+
+	//Prints value of the following variables
+	console.log (rate);
+	console.log (price);
+	console.log(down);
+	console.log(interest);
+	console.log(total);
+	console.log(payment);
+
+	//Inserts value of variable payment into the "Monthly Pyament" form field
+	document.getElementById('payment').value=payment;
+}
+</script>
+</head>
+<body bgcolor="#FFE4E1">
+<H1>Final Exam Car Payment Calculator(CPC)</h3>
+<p>
+<form>
+<table border="1">
+<tr>
+<td>Car Price:</td>
+<td><input  type="text" value="0" name="price" id="price"></td>
+</tr>
+<tr>
+<td>Interest rate:</td>
+<td><input type="text" value="5.5" name="rate" id="rate"></td>
+</tr>
+<tr>
+<td>Number of Years:</td>
+<td>5 years (60 months)
+</td>
+</tr>
+<tr>
+<td>Down Payment:</td>
+<td><input type="text" value="0" name="down" id="down"></td>
+</tr>
+<tr>
+<td>Monthly Payment:</td>
+<td><input type="text" name="payment" id="payment" onfocus="this.blur();"></TD>
+</tr>
+</table>
+</p>
+<p>
+<input type="button" value="Calculate" onclick="calc();">
+<input type="RESET" value="Reset">
+</form>
+
+<hr />
+</body>
+</html>
